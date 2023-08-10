@@ -23,45 +23,16 @@ Student.init(
             type: DataTypes.INTEGER,
             allowNull: false
         },
-        // equipment_id: {
-        //     type: DataTypes.INTEGER,
-        //     references: {
-        //         //'id' from Equip model
-        //         model: 'equipment',
-        //         key: 'id'
-        //     }
-        // },
-        // school_id: {
-        //     type: DataTypes.INTEGER,
-        //     references: {
-        //         //'id' from School model
-        //         model: 'school',
-        //         key: 'id'
-        //     }
-        // },
-        // staff_id: {
-        //     type: DataTypes.INTEGER,
-        //     references: {
-        //         //'id' from Staff
-        //         model: 'staff',
-        //         key: 'id'
-        //     }
-        // },
-        // user_id: {
-        //     type: DataTypes.INTEGER,
-        //     references: {
-        //         //'id' from User
-        //         model: 'user',
-        //         key: 'id'
-        //     }
-        // }
+        notes: {
+            type: DataTypes.TEXT,
+        },
     }, {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'comment'
+    modelName: 'student'
     }
 );
 
-module.exports = Comment;
+module.exports = Student;

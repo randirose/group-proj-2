@@ -15,29 +15,13 @@ School.init(
             type: DataTypes.STRING,
             allowNull: false
         },
-        // staff_id: {
-        //     type: DataTypes.INTEGER,
-        //     references: {
-        //         //'id' from Staff
-        //         model: 'staff',
-        //         key: 'id'
-        //     }
-        // },
-        // student_id: {
-        //     type: DataTypes.INTEGER,
-        //     references: {
-        //         //'id' from Student
-        //         model: 'student',
-        //         key: 'id'
-        //     }
-        // },
     }, {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'comment'
+    modelName: 'school'
     }
 );
 
-module.exports = Comment;
+module.exports = School;

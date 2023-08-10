@@ -30,26 +30,18 @@ Ticket.init(
         staff_id: {
             type: DataTypes.INTEGER,
             references: {
-                //'id' from Staff
+                //'id' from Staff - should pull in whoever is logged in and creates the ticket
                 model: 'staff',
                 key: 'id'
             }
         },
-        // user_id: {
-        //     type: DataTypes.INTEGER,
-        //     references: {
-        //         //'id' from User
-        //         model: 'user',
-        //         key: 'id'
-        //     }
-        // }
     }, {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'comment'
+    modelName: 'ticket'
     }
 );
 
-module.exports = Comment;
+module.exports = Ticket;

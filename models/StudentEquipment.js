@@ -1,4 +1,4 @@
-// mapping table for students and equipment
+// mapping table for students and equipment rented out to those students
 
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
@@ -16,7 +16,7 @@ StudentEquipment.init(
         student_id: {
             type: DataTypes.INTEGER,
             references: {
-                //'id' from Student model
+                //'id' from Student
                 model: 'student',
                 key: 'id'
             }
@@ -34,8 +34,8 @@ StudentEquipment.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'comment'
+    modelName: 'StudentEquipment'
     }
 );
 
-module.exports = Comment;
+module.exports = StudentEquipment;

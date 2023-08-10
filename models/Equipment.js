@@ -31,14 +31,6 @@ Equipment.init(
             allowNull: false,
             defaultValue: false
         },
-        staff_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                //'id' from Staff model
-                model: 'staff',
-                key: 'id'
-            }
-        },
         ticket_id: {
             type: DataTypes.INTEGER,
             references: {
@@ -52,8 +44,8 @@ Equipment.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'comment'
+    modelName: 'equipment'
     }
 );
 
-module.exports = Comment;
+module.exports = Equipment;

@@ -1,4 +1,4 @@
-// mapping table for students/staff/school
+// mapping table for students belonging to staff member, belonging to school
 
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
@@ -12,14 +12,6 @@ StudentStaff.init(
             allowNull: false,
             primaryKey: true,
             autoIncrement: true
-        },
-        school_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                //'id' from School model
-                model: 'school',
-                key: 'id'
-            }
         },
         staff_id: {
             type: DataTypes.INTEGER,
@@ -42,8 +34,8 @@ StudentStaff.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'comment'
+    modelName: 'studentStaff'
     }
 );
 
-module.exports = Comment;
+module.exports = StudentStaff;
