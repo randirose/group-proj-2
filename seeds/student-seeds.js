@@ -29,7 +29,7 @@ const studentData = [
         first_name: 'Lucian',
         last_name: 'Goodwin',
         grade: 4,
-        notes: 'Lucian is a fourth grader at Faubion PK-8 and uses an iPad with a writing app.',
+        notes: 'Lucian is a fourth grader at Faubion PK-8 and has no equipment checked out.',
     },
     {
         first_name: 'Nina',
@@ -41,7 +41,7 @@ const studentData = [
         first_name: 'Kaiden',
         last_name: 'Duran',
         grade: 6,
-        notes: 'Kaiden is a sixth grader at Harriet Tubman MS and uses a writing app.',
+        notes: 'Kaiden is a sixth grader at Harriet Tubman MS and uses a Surface Pro with EyeGaze.',
     },
     {
         first_name: 'Conner',
@@ -59,7 +59,7 @@ const studentData = [
         first_name: 'Myla',
         last_name: 'Clements',
         grade: 9,
-        notes: 'Myla is a freshman at Cleveland HS and uses an iPad with a writing app.',
+        notes: 'Myla is a freshman at Cleveland HS and uses a large laptop for vision needs.',
     },
     {
         first_name: 'Mario',
@@ -71,7 +71,7 @@ const studentData = [
         first_name: 'Luther',
         last_name: 'Benton',
         grade: 11,
-        notes: 'Luther is a junior at Lincoln HS and uses an iPad with a writing app.',
+        notes: 'Luther is a junior at Lincoln HS and has no equipment checked out.',
     },
     {
         first_name: 'Mohamed',
