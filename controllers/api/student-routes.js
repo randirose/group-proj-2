@@ -16,9 +16,8 @@ router.get('/', async (req, res) => {
 });
 
 
-// get one product
+// Get a single student by id, showing their school, all equipment checked out, any open issue tickets, and the associated staff members
 router.get('/:id', async (req, res) => {
-    // find a single product by its `id`, including its associated Category and Tag data
     try {
         const studentData = await Student.findByPk(req.params.id, {
             include: [{ model: Staff }, { model: School }, { model: Equipment }, { model: Ticket },],
@@ -33,34 +32,50 @@ router.get('/:id', async (req, res) => {
 });
 
 
-// create new student record
-router.post('/', (req, res) => {
-    /* req.body should look like this...
-      {
-        first_name: "Jane",
-        last_name: "Smith",
-        grade: 3,
-        notes: "Likes to take photos of their work with the iPad."
-      }
-    */
-    Student.create(req.body)
-        .then((student) => {
-            // if there's product tags, we need to create pairings to bulk create in the ProductTag model
-            if (req.body.tagIds.length) {
-                const productTagIdArr = req.body.tagIds.map((tag_id) => {
-                    return {
-                        student_id: student.id,
-                        tag_id,
-                    };
-                });
-                return StudentStaff.bulkCreate(productTagIdArr);
-            }
-            // if no staff, just respond
-            res.status(200).json(student);
-        })
-        .then((productTagIds) => res.status(200).json(productTagIds))
-        .catch((err) => {
-            console.log(err);
-            res.status(400).json(err);
-        });
+// Create new student record, ensure req.body aligns with the Student model
+router.post('/', async (req, res) => {
+    try {
+        const studentData = await Student.create(req.body);
+        if (!studentData) {
+            res.status(404).json({ message: 'Error creating new student record.' });
+        }
+        res.status(200).json(studentData);
+    } catch (err) {
+        res.status(500).json(err);
+    }
 });
+
+
+// Update a student record by id
+router.put('/:id', async (req, res) => {
+    try {
+        const studentData = await Student.update(req.body, {
+            where: {
+                id: req.params.id,
+            },
+        });
+        if (!studentData) {
+            res.status(404).json({ message: 'No student found with that id.' });
+        }
+        res.status(200).json(studentData);
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
+
+// Delete a student record by id
+router.delete('/:id', async (req, res) => {
+    try {
+        await Student.destroy({
+            where: {
+                id: req.params.id,
+            },
+        });
+        res.json({ message: `Successfully deleted student with id: ${req.params.id}.` });
+    } catch (err) {
+        res.status(500).json(err, { message: `Error deleting student with id: ${req.params.id}.\nEnsure this student id exists and try again.` });
+    }
+});
+
+module.exports = router;
