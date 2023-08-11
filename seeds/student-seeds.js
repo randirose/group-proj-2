@@ -23,7 +23,7 @@ const studentData = [
         first_name: 'Rafferty',
         last_name: 'Silva',
         grade: 3,
-        notes: 'Rafferty is a third grader at Duniway ES and uses an iPad with a writing app.',
+        notes: 'Rafferty is a third grader at Duniway ES and uses C-Pen to help with reading.',
     },
     {
         first_name: 'Lucian',
@@ -35,7 +35,7 @@ const studentData = [
         first_name: 'Nina',
         last_name: 'Nielsen',
         grade: 5,
-        notes: 'Nina is a fifth grader at Glencoe ES and uses an iPad with a writing app.',
+        notes: 'Nina is a fifth grader at Glencoe ES and uses a Soundfield system for hearing needs.',
     },
     {
         first_name: 'Kaiden',
@@ -53,13 +53,13 @@ const studentData = [
         first_name: 'Sian',
         last_name: 'Wolf',
         grade: 8,
-        notes: 'Sian is a eighth grader at Kellogg MS and uses an iPad with a writing app.',
+        notes: 'Sian is a eighth grader at Kellogg MS and uses a C-Pen to help with reading.',
     },
     {
         first_name: 'Myla',
         last_name: 'Clements',
         grade: 9,
-        notes: 'Myla is a freshman at Cleveland HS and uses a large laptop for vision needs.',
+        notes: 'Myla is a freshman at Cleveland HS and uses a touchscreen chromebook.',
     },
     {
         first_name: 'Mario',
