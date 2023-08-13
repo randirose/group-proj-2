@@ -6,6 +6,7 @@ const seedStudentStaff = require('./studentStaff-seeds');
 const seedStudentEquipment = require('./studentEquipment-seeds');
 
 const sequelize = require('../config/connection');
+const seedTickets = require('./ticket-seeds');
 
 const seedAll = async () => {
     await sequelize.sync({ force: true });
@@ -21,6 +22,9 @@ const seedAll = async () => {
     console.log('\n----- STAFF SEEDED -----\n');
 
     await seedEquipment();
+    console.log('\n----- EQUIPMENT SEEDED -----\n');
+
+    await seedTickets();
     console.log('\n----- EQUIPMENT SEEDED -----\n');
 
     await seedStudentStaff();
