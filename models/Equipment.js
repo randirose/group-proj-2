@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Equipment extends Model {}
+class Equipment extends Model { }
 
 Equipment.init(
     {
@@ -16,10 +16,12 @@ Equipment.init(
         },
         serial_num: {
             type: DataTypes.STRING,
-            allowNull: false,
+            // Changed to allow a null value if equipment doesn't have a serial number
+            // allowNull: false,
         },
         price: {
-            type: DataTypes.DECIMAL,
+            // Added optional parameters to limit to 10 numbers long and always show 2 decimal places
+            type: DataTypes.DECIMAL(10, 2),
             allowNull: false,
         },
         link: {
@@ -45,7 +47,7 @@ Equipment.init(
     freezeTableName: true,
     underscored: true,
     modelName: 'equipment'
-    }
+}
 );
 
 module.exports = Equipment;
