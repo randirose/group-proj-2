@@ -131,10 +131,10 @@ const equipmentData = [
     },
     // 17
     {
-        asset_name: 'Microsoft Surface Pro 9',
-        serial_num: 'J923PS8C6HJ89',
-        price: 830.89,
-        link: 'https://www.amazon.com/Microsoft-Lightweight-Processor-Multi-Tasking-Platinum/dp/B0B9Q2ZB5T?ref_=ast_sto_dp&th=1',
+        asset_name: 'Apple iPad (9th Generation)',
+        serial_num: 'DMPE976WDK10',
+        price: 399.99,
+        link: 'https://www.amazon.com/2021-Apple-10-2-inch-iPad-Wi-Fi/dp/B09G9CJM1Z/ref=sr_1_3',
         is_checked_out: false,
     },
     // 18
@@ -147,18 +147,18 @@ const equipmentData = [
     },
     // 19
     {
-        asset_name: 'Microsoft Surface Pro 9',
-        serial_num: 'J98DCH59DES56',
-        price: 830.89,
-        link: 'https://www.amazon.com/Microsoft-Lightweight-Processor-Multi-Tasking-Platinum/dp/B0B9Q2ZB5T?ref_=ast_sto_dp&th=1',
+        asset_name: 'Apple iPad (10th Generation)',
+        serial_num: 'DJ3EPO028K10',
+        price: 399.99,
+        link: 'https://www.amazon.com/Apple-2022-10-9-inch-iPad-Wi-Fi/dp/B0BJLXMVMV/ref=sr_1_4',
         is_checked_out: false,
     },
     // 20
     {
-        asset_name: 'Microsoft Surface Pro 9',
-        serial_num: 'J98DCH89ETR56',
-        price: 830.89,
-        link: 'https://www.amazon.com/Microsoft-Lightweight-Processor-Multi-Tasking-Platinum/dp/B0B9Q2ZB5T?ref_=ast_sto_dp&th=1',
+        asset_name: 'Apple iPad (10th Generation)',
+        serial_num: 'DJ84EV5R8K33',
+        price: 399.99,
+        link: 'https://www.amazon.com/Apple-2022-10-9-inch-iPad-Wi-Fi/dp/B0BJLXMVMV/ref=sr_1_4',
         is_checked_out: false,
     },
     // 21
