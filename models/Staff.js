@@ -59,13 +59,13 @@ Staff.init(
     },
   }, {
   hooks: {
-    beforeCreate: async (newUserData) => {
-      newUserData.password = await bcrypt.hash(newUserData.password, 10);
-      return newUserData;
+    beforeCreate: async (newStaffData) => {
+      newStaffData.password = await bcrypt.hash(newStaffData.password, 10);
+      return newStaffData;
     },
-    beforeUpdate: async (updatedUserData) => {
-      updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
-      return updatedUserData;
+    beforeUpdate: async (updatedStaffData) => {
+      updatedStaffData.password = await bcrypt.hash(updatedStaffData.password, 10);
+      return updatedStaffData;
     },
   },
   sequelize,

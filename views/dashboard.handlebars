@@ -1,0 +1,64 @@
+<div class="row row-cols-1 row-cols-md-2 g-4">
+  <div class="col">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Students</h5>
+        <p class="card-text">See students you manage and equipment they have checked out</p>
+      </div>
+        <ul class="list-group list-group-flush">
+            {{#each students as |student|}}
+            <li class="list-group-item">{{student.first_name student.last_name}}</li>
+            {{/each}}
+        </ul>
+        <div class="card-footer">
+            <a href="/students" class="card-link">See all student information</a>
+        </div>
+    </div>
+  </div>
+    <div class="col">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Equipment</h5>
+        <p class="card-text">See equipment your students have checked out and available equipment</p>
+      </div>
+        <ul class="list-group list-group-flush">
+            {{#each equipments as |equipment|}}
+            <li class="list-group-item">{{equipment.asset_name}}</li>
+        </ul>
+        <div class="card-footer">
+            <a href="/equipment" class="card-link">See more equipment info</a>
+        </div>
+    </div>
+  </div>
+    <div class="col">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Tickets</h5>
+        <p class="card-text">A quick glance at tickets you've opened</p>
+      </div>
+        <ul class="list-group list-group-flush">
+            {{#each tickets as |ticket|}}
+            <li class="list-group-item">{{ticket.status}}: {{equipment.asset_name}}</li>
+        </ul>
+        <div class="card-footer">
+            <a href="/tickets" class="card-link">See more ticket info</a>
+        </div>
+    </div>
+  </div>
+    <div class="col">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Profile</h5>
+        <p class="card-text">View and edit your staff profile</p>
+      </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">{{staff.first_name}} {{staff.last_name}}</li>
+            <li class="list-group-item">Role: {{staff.role}}</li>
+            <li class="list-group-item">School: {{school.name}}</li>
+        </ul>
+        <div class="card-footer">
+            <a href="/profile" class="card-link">See more</a>
+        </div>
+    </div>
+  </div>
+</div>
