@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Ticket extends Model {}
+class Ticket extends Model { }
 
 Ticket.init(
     {
@@ -15,7 +15,7 @@ Ticket.init(
             type: DataTypes.STRING
         },
         date_created: {
-            type: DataTypes.DATE,
+            type: DataTypes.DATEONLY,
             allowNull: false,
             defaultValue: DataTypes.NOW
         },
@@ -41,7 +41,7 @@ Ticket.init(
     freezeTableName: true,
     underscored: true,
     modelName: 'ticket'
-    }
+}
 );
 
 module.exports = Ticket;
