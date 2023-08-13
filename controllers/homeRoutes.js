@@ -42,13 +42,18 @@ router.get('/login', (req, res) => {
 	res.render('login');
 });
 
-router.get('/signup', (req, res) => {
+router.get('/signup', async (req, res) => {
     if (req.session.loggedIn) {
       res.redirect('/dashboard');
       return;
     }
+    const schoolData = await School.findAll();
+    const schools = schoolData.map((school) => school.get({ plain: true }));
+
   
-    res.render('signup');
+    res.render('signup',
+        { schools }
+    );
   });
 
 module.exports = router;

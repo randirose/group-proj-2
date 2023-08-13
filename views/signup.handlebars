@@ -1,0 +1,43 @@
+<form class="row g-3 signup-form">
+  <div class="col-md-6">
+    <label for="inputFirstName" class="form-label">First Name</label>
+    <input type="text" class="form-control" id="inputFirstName">
+  </div>
+  <div class="col-md-6">
+    <label for="inputLastName" class="form-label">Last Name</label>
+    <input type="text" class="form-control" id="inputLastName">
+  </div>
+  <div class="col-md-6">
+    <label for="inputEmail" class="form-label">Email</label>
+    <input type="email" class="form-control" id="inputEmail">
+  </div>
+  <div class="col-md-6">
+    <label for="inputPassword" class="form-label">Password</label>
+    <input type="password" class="form-control" id="inputPassword">
+  </div>
+  <div class="col-md-6">
+    <label for="inputRole" class="form-label">Role</label>
+    <input type="text" class="form-control" id="inputRole">
+  </div>
+  <div class="col-md-6">
+    <label for="inputSchool" class="form-label">School</label>
+    <select id="inputSchool" class="form-select">
+      <option selected>Choose School</option>
+      {{#each schools as |school|}}
+      <option>{{school.name}}</option>
+      {{/each}}
+    </select>
+  </div>
+  <div class="col-12">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" id="gridCheck">
+      <label class="form-check-label" for="gridCheck">
+        Check if you're an administrator
+      </label>
+    </div>
+  </div>
+  <div class="col-12">
+    <button type="submit" class="btn btn-primary">Sign Up</button>
+  </div>
+</form>
+<script src="/js/signup.js"></script>

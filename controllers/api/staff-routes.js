@@ -36,12 +36,20 @@ router.get('/:id', async (req, res) => {
 // Create new staff record, ensure req.body aligns with the Staff model
 router.post('/', async (req, res) => {
     try {
-        const staffData = await Staff.create(req.body);
+        const staffData = await Staff.create({
+            first_name: req.body.firstName,
+            last_name: req.body.lastName,
+            email: req.body.email,
+            password: req.body.password,
+            role: req.body.role,
+            school: req.body.school,
+            is_admin: req.body.isAdmin,
+        });
         req.session.save(() => {
             req.session.staff_id = staffData.id;
             req.session.loggedIn = true;
         if (!staffData) {
-            res.status(404).json({ message: 'Error creating new student record.' });
+            res.status(404).json({ message: 'Error creating new staff record.' });
         }});
         res.status(200).json(staffData);
     } catch (err) {
