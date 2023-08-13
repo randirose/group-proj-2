@@ -1,6 +1,6 @@
 # Education Technology Manager
 
-EdX Coding Bootcamp - Project 2 - Group 4 - Education Technology Manager
+EdX Coding Bootcamp - Project 2 - Group 4
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
@@ -21,9 +21,11 @@ EdX Coding Bootcamp - Project 2 - Group 4 - Education Technology Manager
 
 Education Technology Manager
 
-Helps manage a library of technology and equipment that is checked out by staff for students.
+App that manages a library of technology and equipment that is checked out by staff for students across different schools.
 
 <!-- Add more description? -->
+
+<!-- Edit this if we don't get to this feature -->
 
 Users can:
 
