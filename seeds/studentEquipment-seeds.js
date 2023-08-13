@@ -14,7 +14,7 @@ const studentEquipmentData = [
         student_id: 2,
     },
     {
-        equipment_id: 25,
+        equipment_id: 21,
         student_id: 2,
     },
     {
@@ -33,9 +33,34 @@ const studentEquipmentData = [
         equipment_id: 16,
         student_id: 7,
     },
-
-
-
+    {
+        equipment_id: 4,
+        student_id: 8,
+    },
+    {
+        equipment_id: 24,
+        student_id: 8,
+    },
+    {
+        equipment_id: 12,
+        student_id: 9,
+    },
+    {
+        equipment_id: 9,
+        student_id: 10,
+    },
+    {
+        equipment_id: 26,
+        student_id: 11,
+    },
+    {
+        equipment_id: 6,
+        student_id: 13,
+    },
+    {
+        equipment_id: 23,
+        student_id: 13,
+    },
 ];
 
 const seedStudentEquipment = () => StudentEquipment.bulkCreate(studentEquipmentData);
