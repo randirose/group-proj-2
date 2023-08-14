@@ -1,6 +1,6 @@
 // front end for when user adds a new student
 
-const addButton = document.querySelector('.new-student-form');
+const addButton = document.querySelector('#new-student-form');
 
 const newStudentHandler = async(event)=>{
     event.preventDefault();
@@ -24,10 +24,10 @@ const newStudentHandler = async(event)=>{
         if (response.ok) {
             document.location.replace('/dashboard');
         } else {
-            alert('Sorry, failed to create new blog post');
+            alert('Sorry, failed to create new student');
         }
     }
 };
 
-addButton.addEventListener('submit', newStudentHandler);
+addButton.addEventListener('click', newStudentHandler);
 

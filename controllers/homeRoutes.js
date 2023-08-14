@@ -62,20 +62,6 @@ router.get('/profile', withAuth, async (req, res)=>{
     }
 });
 
-// router.get('/dashboard', withAuth, async (req, res)=>{
-//     try {
-//         const studentData = await Student.findAll({
-//             where: {staff_id: req.session.staff_id},
-//         });
-//         const students = studentData.map((student) => student.get({ plain: true }));
-//         res.render('dashboard', {
-//             ...students,
-//             loggedIn: req.session.loggedIn
-//         });
-//     } catch (err) {
-//         res.status(500).json(err);
-//     }
-// });
 // get single student
 router.get('/students/:id', withAuth, async (req, res) => {
     try {
@@ -86,7 +72,7 @@ router.get('/students/:id', withAuth, async (req, res) => {
       if (studentData) {
         const student = studentData.get({ plain: true });
   
-        res.render('students', { student });
+        res.render('students', { student, loggedIn: req.session.loggedIn });
       } else {
         res.status(404).end();
       }
@@ -99,7 +85,19 @@ router.get('/add-student', withAuth, async (req, res)=> {
     try {
         const staffData = await Staff.findAll();
         const staffs = staffData.map((staff)=>staff.get({ plain:true }));
-        res.render('add-student', { staffs })
+        res.render('add-student', { staffs, loggedIn: req.session.loggedIn } )
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
+router.get('/edit-student/:id', withAuth, async (req, res)=> {
+    try {
+        const studentData = await Student.findByPk(req.params.id);
+        const student = studentData.get({ plain: true });
+        const staffData = await Staff.findAll();
+        const staffs = staffData.map((staff)=>staff.get({ plain:true }));
+        res.render('add-student', { student, staffs, loggedIn: req.session.loggedIn } )
     } catch (err) {
         res.status(500).json(err);
     }

@@ -24,7 +24,7 @@
     <select id="inputSchool" class="form-select">
       <option selected>Choose School</option>
       {{#each schools as |school|}}
-      <option class="school-options" data-id="{{school.id}}">{{school.name}}</option>
+      <option value="{{school.id}}">{{school.name}}</option>
       {{/each}}
     </select>
   </div>

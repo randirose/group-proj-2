@@ -47,11 +47,13 @@ router.post('/', async (req, res) => {
         });
         req.session.save(() => {
             req.session.staff_id = staffData.id;
+            req.session.email = staffData.email;
             req.session.loggedIn = true;
         // if (!staffData) {
         //     res.status(404).json({ message: 'Error creating new staff record.' });
-        });
+     
         res.status(200).json(staffData);
+    });
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
