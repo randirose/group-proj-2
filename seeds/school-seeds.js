@@ -11,47 +11,47 @@ const schoolData = [
     },
     // 3
     {
-        notes: 'Capitol Hill ES',
+        name: 'Capitol Hill ES',
     },
     // 4
     {
-        notes: 'Duniway ES',
+        name: 'Duniway ES',
     },
     // 5
     {
-        notes: 'Faubion PK-8',
+        name: 'Faubion PK-8',
     },
     // 6
     {
-        notes: 'Glencoe ES',
+        name: 'Glencoe ES',
     },
     // 7
     {
-        notes: 'Harriet Tubman MS',
+        name: 'Harriet Tubman MS',
     },
     // 8
     {
-        notes: 'Hosford MS',
+        name: 'Hosford MS',
     },
     // 9
     {
-        notes: 'Kellogg MS',
+        name: 'Kellogg MS',
     },
     // 10
     {
-        notes: 'Cleveland HS',
+        name: 'Cleveland HS',
     },
     // 11
     {
-        notes: 'Ida B. Wells HS',
+        name: 'Ida B. Wells HS',
     },
     // 12
     {
-        notes: 'Lincoln HS',
+        name: 'Lincoln HS',
     },
     // 13
     {
-        notes: 'Roosevelt HS',
+        name: 'Roosevelt HS',
     },
 ];
 

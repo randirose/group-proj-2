@@ -10,47 +10,45 @@ const Equipment = require('./Equipment');
 
 // set up relationships between models
 
-School.hasMany(Staff, {
+Staff.belongsTo(School, {
+    through: 'StaffSchool',
     foreignKey: 'school_id'
 });
 
-Staff.belongsTo(School);
-
-Student.belongsTo(Staff, {
+Student.belongsToMany(Staff, {
     through: StudentStaff,
     foreignKey: 'student_id'
 });
 
-Staff.hasMany(Student, {
+Staff.belongsToMany(Student, {
     through: StudentStaff,
     foreignKey: 'staff_id'
 });
 
-Equipment.hasMany(Ticket, {
+Equipment.belongsToMany(Ticket, {
+    through: 'EquipmentTicket',
     foreignKey: 'equipment_id',
     // when we delete a piece of equipment, deletes any associated tickets
     onDelete: 'CASCADE'
 });
 
-Ticket.belongsTo(Equipment, {
-    foreignKey: 'ticket_id'
-});
-
-Equipment.belongsTo(Student, {
+Equipment.belongsToMany(Student, {
     through: StudentEquipment,
     foreignKey: 'equipment_id'
 });
 
-Student.hasMany(Equipment, {
+Student.belongsToMany(Equipment, {
     through: StudentEquipment,
     foreignKey: 'student_id'
 });
 
-Staff.hasMany(Ticket, {
+Staff.belongsToMany(Ticket, {
+    through: 'StaffTicket',
     foreignKey: 'staff_id'
 });
 
 Ticket.belongsTo(Staff, {
+    through: 'StaffTicket',
     foreignKey: 'staff_id'
 });
 

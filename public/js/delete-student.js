@@ -1,0 +1,1 @@
+// fe code to delete student by id

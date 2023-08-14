@@ -9,7 +9,7 @@ const staffData = [
         is_admin: false,
         school_id: 1,
         email: 'anita_reid@schools.net',
-        password: '',
+        password: '12345678',
     },
     // 2
     {
@@ -19,7 +19,7 @@ const staffData = [
         is_admin: false,
         school_id: 2,
         email: 'katerina_bowman@schools.net',
-        password: '',
+        password: '12345678',
     },
     // 3
     {
@@ -29,7 +29,7 @@ const staffData = [
         is_admin: false,
         school_id: 3,
         email: 'herman_hodges@schools.net',
-        password: '',
+        password: '12345678',
     },
     // 4
     {
@@ -39,7 +39,7 @@ const staffData = [
         is_admin: false,
         school_id: 4,
         email: 'ashton_chan@schools.net',
-        password: '',
+        password: '12345678',
     },
     // 5
     {
@@ -49,7 +49,7 @@ const staffData = [
         is_admin: false,
         school_id: 5,
         email: 'louise_ramirez@schools.net',
-        password: '',
+        password: '12345678',
     },
     // 6
     {
@@ -59,7 +59,7 @@ const staffData = [
         is_admin: false,
         school_id: 6,
         email: 'cruz_burke@schools.net',
-        password: '',
+        password: '12345678',
     },
     // 7
     {
@@ -69,7 +69,7 @@ const staffData = [
         is_admin: false,
         school_id: 7,
         email: 'benjamin_lozano@schools.net',
-        password: '',
+        password: '12345678',
     },
     // 8
     {
@@ -79,7 +79,7 @@ const staffData = [
         is_admin: false,
         school_id: 8,
         email: 'jaden_wiley@schools.net',
-        password: '',
+        password: '12345678',
     },
     // 9
     {
@@ -89,7 +89,7 @@ const staffData = [
         is_admin: false,
         school_id: 9,
         email: 'janice_cross@schools.net',
-        password: '',
+        password: '12345678',
     },
     // 10
     {
@@ -99,7 +99,7 @@ const staffData = [
         is_admin: false,
         school_id: 10,
         email: 'ned_hogan@schools.net',
-        password: '',
+        password: '12345678',
     },
     // 11
     {
@@ -109,7 +109,7 @@ const staffData = [
         is_admin: false,
         school_id: 11,
         email: 'orla_carson@schools.net',
-        password: '',
+        password: '12345678',
     },
     // 12
     {
@@ -119,7 +119,7 @@ const staffData = [
         is_admin: false,
         school_id: 12,
         email: 'sylvie_levine@schools.net',
-        password: '',
+        password: '12345678',
     },
     // 13
     {
@@ -129,7 +129,7 @@ const staffData = [
         is_admin: false,
         school_id: 13,
         email: 'jerry_mcconnell@schools.net',
-        password: '',
+        password: '12345678',
     },
     // 14
     {
@@ -138,10 +138,13 @@ const staffData = [
         role: 'Admin',
         is_admin: true,
         email: 'admin@schools.net',
-        password: '',
+        password: '12345678',
     },
 ];
 
-const seedStaff = () => Staff.bulkCreate(staffData);
+const seedStaff = () => Staff.bulkCreate(staffData, {
+    individualHooks: true,
+    returning: true,
+  });
 
 module.exports = seedStaff;

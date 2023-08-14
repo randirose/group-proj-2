@@ -1,0 +1,10 @@
+<h3>{{student.first_name}} {{student.last_name}}</h3>
+
+<h4>Equipment Checked Out:</h4>
+{{#each equipments as |equipment|}}
+<p>{{equipment.asset_name}}</p>
+{{/each}}
+
+<a href="/edit-student/{{student.id}}">Edit Student</a><br>
+<button data-id="{{student.id}}" class="btn btn-primary">Delete Student</button>
+<script src="/js/delete-student.js"></script>
