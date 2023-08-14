@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Student, Staff, School, Equipment, Ticket, StudentStaff, StudentEquipment } = require('../../models');
+const { Student, School, Equipment, Ticket } = require('../../models');
 
 // The '/api/school/' endpoint
 
