@@ -32,6 +32,24 @@ router.get('/dashboard', withAuth, async (req, res)=>{
     }
 });
 
+router.get('/students', withAuth, async (req, res)=>{
+    try {
+        const studentData = await Staff.findByPk(req.session.staff_id, {
+            attributes: {
+                exclude: ['password']
+            },
+            include: [{ model: Student }, { model: Equipment },],
+        });
+        const students = studentData.map((student) => student.get({ plain: true }));
+        res.render('dashboard', {
+            ...students,
+            loggedIn: req.session.loggedIn
+        });
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
 // redirects to dash once logged in
 router.get('/login', (req, res) => {
 	if (req.session.loggedIn) {
