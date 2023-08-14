@@ -3,15 +3,20 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">Students</h5>
-                <p class="card-text">See students you manage and equipment they have checked out</p>
+                <p class="card-text">See students you manage. Click on a student name to see their profile</p>
             </div>
-            <ul class="list-group list-group-flush">
-                {{#each students as |student|}}
-                <li class="list-group-item">{{first_name last_name}}</li>
-                {{/each}}
+            <ul class="list-group list-group-horizontal">
+             {{#each students as |student|}}
+                <li class="list-group-item"><a href="/students/{{student.id}}" class="list-group-item list-group-item-action">{{student.first_name}} {{student.last_name}}</a></li>
+                <li class="list-group-item">
+                {{#if equipment.length}}
+                checked out
+                {{/if}}
+                </li>
+              {{/each}}
             </ul>
             <div class="card-footer">
-                <a href="/students" class="card-link">See all student information</a>
+                <a href="/add-student">Add Student</a>
             </div>
         </div>
     </div>

@@ -20,10 +20,10 @@ Staff.belongsTo(School, {
     foreignKey: 'school_id'
 });
 
-// Student.belongsTo(Staff, {
-//     through: StudentStaff,
-//     foreignKey: 'student_id'
-// });
+Student.belongsToMany(Staff, {
+    through: StudentStaff,
+    foreignKey: 'student_id'
+});
 
 Staff.belongsToMany(Student, {
     through: StudentStaff,
@@ -42,10 +42,10 @@ Equipment.belongsToMany(Ticket, {
 //     foreignKey: 'ticket_id'
 // });
 
-// Equipment.belongsTo(Student, {
-//     through: StudentEquipment,
-//     foreignKey: 'equipment_id'
-// });
+Equipment.belongsToMany(Student, {
+    through: StudentEquipment,
+    foreignKey: 'equipment_id'
+});
 
 Student.belongsToMany(Equipment, {
     through: StudentEquipment,

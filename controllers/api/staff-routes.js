@@ -42,15 +42,15 @@ router.post('/', async (req, res) => {
             email: req.body.email,
             password: req.body.password,
             role: req.body.role,
-            school: req.body.school,
+            school_id: req.body.schoolId,
             is_admin: req.body.isAdmin,
         });
         req.session.save(() => {
             req.session.staff_id = staffData.id;
             req.session.loggedIn = true;
-        if (!staffData) {
-            res.status(404).json({ message: 'Error creating new staff record.' });
-        }});
+        // if (!staffData) {
+        //     res.status(404).json({ message: 'Error creating new staff record.' });
+        });
         res.status(200).json(staffData);
     } catch (err) {
         console.log(err);

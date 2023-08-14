@@ -22,7 +22,7 @@ router.get('/dashboard', withAuth, async (req, res)=>{
             },
             include: [
                 // { model: Student, include: [{model: Equipment}] }, 
-                { model: Student },
+                { model: Student},
                 { model: School }, 
                 // { model: Equipment }, 
                 { model: Ticket },],
@@ -30,6 +30,7 @@ router.get('/dashboard', withAuth, async (req, res)=>{
         const staff = staffData.get({ plain:true });
         res.render('dashboard', {
             ...staff,
+            // ...students,
             loggedIn: req.session.loggedIn
         });
     } catch (err) {
@@ -38,25 +39,45 @@ router.get('/dashboard', withAuth, async (req, res)=>{
     }
 });
 
-router.get('/students', withAuth, async (req, res)=>{
+router.get('/profile', withAuth, async (req, res)=>{
     try {
-        const studentData = await Staff.findByPk(req.session.staff_id, {
+        const staffData = await Staff.findByPk(req.session.staff_id, {
             attributes: {
                 exclude: ['password']
             },
-            include: [{ model: Student }, { model: Equipment },],
+            include: [
+                { model: School },]
         });
-        const students = studentData.map((student) => student.get({ plain: true }));
-        res.render('dashboard', {
-            ...students,
+        const staff = staffData.get({ plain:true });
+        const schoolData = await School.findAll();
+        const schools = schoolData.map((school) => school.get({ plain: true }));
+        res.render('profile', {
+            ...staff,
+            ...schools,
             loggedIn: req.session.loggedIn
         });
     } catch (err) {
+        console.log(err);
         res.status(500).json(err);
     }
 });
-// get single post
-router.get('/students/:id', async (req, res) => {
+
+// router.get('/dashboard', withAuth, async (req, res)=>{
+//     try {
+//         const studentData = await Student.findAll({
+//             where: {staff_id: req.session.staff_id},
+//         });
+//         const students = studentData.map((student) => student.get({ plain: true }));
+//         res.render('dashboard', {
+//             ...students,
+//             loggedIn: req.session.loggedIn
+//         });
+//     } catch (err) {
+//         res.status(500).json(err);
+//     }
+// });
+// get single student
+router.get('/students/:id', withAuth, async (req, res) => {
     try {
       const studentData = await Student.findByPk(req.params.id, {
         include: [ { model: Equipment },],
@@ -65,7 +86,7 @@ router.get('/students/:id', async (req, res) => {
       if (studentData) {
         const student = studentData.get({ plain: true });
   
-        res.render('student', { student });
+        res.render('students', { student });
       } else {
         res.status(404).end();
       }
@@ -73,6 +94,16 @@ router.get('/students/:id', async (req, res) => {
       res.status(500).json(err);
     }
   });
+
+router.get('/add-student', withAuth, async (req, res)=> {
+    try {
+        const staffData = await Staff.findAll();
+        const staffs = staffData.map((staff)=>staff.get({ plain:true }));
+        res.render('add-student', { staffs })
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
 
 // redirects to dash once logged in
 router.get('/login', (req, res) => {

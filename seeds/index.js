@@ -15,11 +15,11 @@ const seedAll = async () => {
     await seedSchools();
     console.log('\n----- SCHOOLS SEEDED -----\n');
 
-    await seedStudents();
-    console.log('\n----- STUDENTS SEEDED -----\n');
-
     await seedStaff();
     console.log('\n----- STAFF SEEDED -----\n');
+
+    await seedStudents();
+    console.log('\n----- STUDENTS SEEDED -----\n');
 
     await seedEquipment();
     console.log('\n----- EQUIPMENT SEEDED -----\n');
@@ -27,8 +27,8 @@ const seedAll = async () => {
     await seedTickets();
     console.log('\n----- EQUIPMENT SEEDED -----\n');
 
-    await seedStudentStaff();
-    console.log('\n----- STUDENT/STAFF SEEDED -----\n');
+    // await seedStudentStaff();
+    // console.log('\n----- STUDENT/STAFF SEEDED -----\n');
 
     await seedStudentEquipment();
     console.log('\n----- STUDENT/EQUIPMENT SEEDED -----\n');

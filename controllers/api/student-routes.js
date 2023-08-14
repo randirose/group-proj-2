@@ -35,7 +35,13 @@ router.get('/:id', async (req, res) => {
 // Create new student record, ensure req.body aligns with the Student model
 router.post('/', async (req, res) => {
     try {
-        const studentData = await Student.create(req.body);
+        const studentData = await Student.create({
+            first_name: req.body.firstName,
+            last_name: req.body.lastName,
+            grade: req.body.grade,
+            staff_id: req.body.staffId,
+            notes: req.body.notes,
+        });
         if (!studentData) {
             res.status(404).json({ message: 'Error creating new student record.' });
         }

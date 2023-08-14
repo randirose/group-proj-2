@@ -7,7 +7,7 @@ const signupFormHandler = async function(event) {
     const email = document.querySelector('#inputEmail').value.trim();
     const password = document.querySelector('#inputPassword').value.trim();
     const role = document.querySelector('#inputRole').value.trim();
-    const school = document.querySelector('#inputSchool').value.trim();
+    const schoolId = document.querySelector('.school-options').dataset.id;
     const isAdmin = document.querySelector('#gridCheck').checked;
     console.log(isAdmin);
   
@@ -19,7 +19,7 @@ const signupFormHandler = async function(event) {
         email,
         password,
         role,
-        school,
+        schoolId,
         isAdmin,
       }),
       headers: { 'Content-Type': 'application/json' },
