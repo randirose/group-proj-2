@@ -97,7 +97,7 @@ router.get('/edit-student/:id', withAuth, async (req, res)=> {
         const student = studentData.get({ plain: true });
         const staffData = await Staff.findAll();
         const staffs = staffData.map((staff)=>staff.get({ plain:true }));
-        res.render('add-student', { student, staffs, loggedIn: req.session.loggedIn } )
+        res.render('edit-student', { student, staffs, loggedIn: req.session.loggedIn } )
     } catch (err) {
         res.status(500).json(err);
     }
