@@ -10,11 +10,6 @@ const Equipment = require('./Equipment');
 
 // set up relationships between models
 
-// School.belongsToMany(Staff, {
-//     through: 'StaffSchool',
-//     foreignKey: 'school_id'
-// });
-
 Staff.belongsTo(School, {
     through: 'StaffSchool',
     foreignKey: 'school_id'
@@ -36,11 +31,6 @@ Equipment.belongsToMany(Ticket, {
     // when we delete a piece of equipment, deletes any associated tickets
     onDelete: 'CASCADE'
 });
-
-// Ticket.belongsTo(Equipment, {
-//     through: 'EquipmentTicket',
-//     foreignKey: 'ticket_id'
-// });
 
 Equipment.belongsToMany(Student, {
     through: StudentEquipment,

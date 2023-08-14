@@ -2,8 +2,9 @@
 
 <h4>Equipment Checked Out:</h4>
 {{#each equipments as |equipment|}}
-<p>{{asset_name}}</p>
+<p>{{equipment.asset_name}}</p>
 {{/each}}
 
 <a href="/edit-student/{{student.id}}">Edit Student</a>
-<button class="btn btn-primary">Delete Student</button>
+<button data-id="{{student.id}}" class="btn btn-primary">Delete Student</button>
+<script src="/js/delete-student.js"></script>
