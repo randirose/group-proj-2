@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Staff, Student, Equipment, Ticket, School } = require('../models/');
+const { Staff, Student, Equipment, Ticket, School, } = require('../models/');
 const withAuth = require('../utils/auth');
 
 // homepage route
@@ -20,7 +20,12 @@ router.get('/dashboard', withAuth, async (req, res)=>{
             attributes: {
                 exclude: ['password']
             },
-            include: [{ model: Student }, { model: School }, { model: Equipment }, { model: Ticket },],
+            include: [
+                // { model: Student, include: [{model: Equipment}] }, 
+                { model: Student },
+                { model: School }, 
+                // { model: Equipment }, 
+                { model: Ticket },],
         });
         const staff = staffData.get({ plain:true });
         res.render('dashboard', {
@@ -28,6 +33,7 @@ router.get('/dashboard', withAuth, async (req, res)=>{
             loggedIn: req.session.loggedIn
         });
     } catch (err) {
+        console.log(err);
         res.status(500).json(err);
     }
 });
@@ -49,6 +55,24 @@ router.get('/students', withAuth, async (req, res)=>{
         res.status(500).json(err);
     }
 });
+// get single post
+router.get('/students/:id', async (req, res) => {
+    try {
+      const studentData = await Student.findByPk(req.params.id, {
+        include: [ { model: Equipment },],
+      });
+  
+      if (studentData) {
+        const student = studentData.get({ plain: true });
+  
+        res.render('student', { student });
+      } else {
+        res.status(404).end();
+      }
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
 
 // redirects to dash once logged in
 router.get('/login', (req, res) => {

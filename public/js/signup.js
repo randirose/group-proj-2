@@ -8,7 +8,8 @@ const signupFormHandler = async function(event) {
     const password = document.querySelector('#inputPassword').value.trim();
     const role = document.querySelector('#inputRole').value.trim();
     const school = document.querySelector('#inputSchool').value.trim();
-    const isAdmin = document.querySelector('#gridCheck').value.trim();
+    const isAdmin = document.querySelector('#gridCheck').checked;
+    console.log(isAdmin);
   
     const response = await fetch('/api/staff', {
       method: 'POST',

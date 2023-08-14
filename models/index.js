@@ -10,15 +10,15 @@ const Equipment = require('./Equipment');
 
 // set up relationships between models
 
-School.belongsToMany(Staff, {
+// School.belongsToMany(Staff, {
+//     through: 'StaffSchool',
+//     foreignKey: 'school_id'
+// });
+
+Staff.belongsTo(School, {
     through: 'StaffSchool',
     foreignKey: 'school_id'
 });
-
-// Staff.belongsTo(School, {
-//     through: 'StaffSchool',
-//     foreignKey: 'staff_id'
-// });
 
 // Student.belongsTo(Staff, {
 //     through: StudentStaff,
