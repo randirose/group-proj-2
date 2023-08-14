@@ -142,6 +142,9 @@ const staffData = [
     },
 ];
 
-const seedStaff = () => Staff.bulkCreate(staffData);
+const seedStaff = () => Staff.bulkCreate(staffData, {
+    individualHooks: true,
+    returning: true,
+  });
 
 module.exports = seedStaff;
