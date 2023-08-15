@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Student, Staff, School, Equipment, Ticket, } = require('../../models');
+const { Student, Staff, School, Equipment, Ticket, StudentStaff } = require('../../models');
 
 // The '/api/student/' endpoint
 
@@ -45,6 +45,13 @@ router.post('/', async (req, res) => {
         if (!studentData) {
             res.status(404).json({ message: 'Error creating new student record.' });
         }
+
+            const studentStaffData = {
+                student_id: studentData.id,
+                staff_id: studentData.staff_id,
+              };
+              StudentStaff.create(studentStaffData);
+
         res.status(200).json(studentData);
     } catch (err) {
         res.status(500).json(err);

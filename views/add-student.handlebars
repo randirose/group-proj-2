@@ -20,7 +20,7 @@
     <select id="inputStaff" class="form-select">
       <option selected>Choose Staff</option>
       {{#each staffs as |staff|}}
-      <option data-id="{{staff.id}}">{{staff.first_name}} {{staff.last_name}}</option>
+      <option value="{{staff.id}}">{{staff.first_name}} {{staff.last_name}}</option>
       {{/each}}
     </select>
   </div>

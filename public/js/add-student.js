@@ -8,7 +8,7 @@ const newStudentHandler = async(event)=>{
     const firstName = document.querySelector('#inputFirstName').value.trim();
     const lastName = document.querySelector('#inputLastName').value.trim();
     const grade = document.querySelector('#inputGrade').value.trim();
-    const staffId = document.querySelector('#inputStaff').dataset.id;
+    const staffId = document.querySelector('#inputStaff').value;
     const notes = document.querySelector('#inputNotes').value.trim();
     
 
@@ -29,5 +29,5 @@ const newStudentHandler = async(event)=>{
     }
 };
 
-addButton.addEventListener('click', newStudentHandler);
+addButton.addEventListener('submit', newStudentHandler);
 
