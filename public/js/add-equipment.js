@@ -1,0 +1,1 @@
+// FE code to add new piece of equipment

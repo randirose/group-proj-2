@@ -7,7 +7,7 @@ const signupFormHandler = async function(event) {
     const email = document.querySelector('#inputEmail').value.trim();
     const password = document.querySelector('#inputPassword').value.trim();
     const role = document.querySelector('#inputRole').value.trim();
-    const schoolId = document.querySelector('#inputSchool').dataset.id;
+    const schoolId = document.querySelector('#inputSchool').value;
     const isAdmin = document.querySelector('#gridCheck').checked;
     console.log(isAdmin);
   
@@ -24,7 +24,7 @@ const signupFormHandler = async function(event) {
       }),
       headers: { 'Content-Type': 'application/json' },
     });
-  
+    console.log(schoolId);
     if (response.ok) {
       document.location.replace('/dashboard');
     } else {
