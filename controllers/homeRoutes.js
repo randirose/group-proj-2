@@ -38,23 +38,22 @@ router.get('/dashboard', withAuth, async (req, res)=>{
     }
 });
 
-// router.get('/dashboard', withAuth, async (req, res)=>{
-//     try {
-//         const equipData = await Equipment.findAll({
-//             where: {
-//                 is_checked_out: false
-//             }
-//         });
-//         const equipments = equipData.map((equipment) => equipment.get({ plain: true }));
-//         res.render('dashboard', {
-//             ...equipments,
-//             loggedIn: req.session.loggedIn
-//         });
-//     } catch (err) {
-//         console.log(err);
-//         res.status(500).json(err);
-//     }
-// });
+router.get('/equipment', withAuth, async (req, res)=>{
+    try {
+        const equipData = await Equipment.findAll({
+            include: [{ model: Student }, { model: Ticket },],
+        });
+        const equipments = equipData.map((equipment) => equipment.get({ plain: true }));
+        console.log(equipments);
+        res.render('equipment', {
+            equipments,
+            loggedIn: req.session.loggedIn
+        });
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
+});
 
 router.get('/profile', withAuth, async (req, res)=>{
     try {
@@ -70,7 +69,7 @@ router.get('/profile', withAuth, async (req, res)=>{
         const schools = schoolData.map((school) => school.get({ plain: true }));
         res.render('profile', {
             ...staff,
-            ...schools,
+            schools,
             loggedIn: req.session.loggedIn
         });
     } catch (err) {

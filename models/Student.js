@@ -23,14 +23,14 @@ Student.init(
             type: DataTypes.INTEGER,
             allowNull: false
         },
-        staff_id: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            references: {
-                model: 'staff',
-                key: 'id'
-            }
-        },
+        // staff_id: {
+        //     type: DataTypes.INTEGER,
+        //     allowNull: false,
+        //     references: {
+        //         model: 'staff',
+        //         key: 'id'
+        //     }
+        // },
         notes: {
             type: DataTypes.TEXT,
         },
