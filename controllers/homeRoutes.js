@@ -28,6 +28,7 @@ router.get('/dashboard', withAuth, async (req, res)=>{
                 { model: Ticket },],
         });
         const staff = staffData.get({ plain:true });
+        console.log(staff);
         res.render('dashboard', {
             ...staff,
             loggedIn: req.session.loggedIn
