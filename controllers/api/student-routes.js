@@ -45,7 +45,7 @@ router.post('/', async (req, res) => {
         if (!studentData) {
             res.status(404).json({ message: 'Error creating new student record.' });
         }
-
+        
             const studentStaffData = {
                 student_id: studentData.id,
                 staff_id: studentData.staff_id,
