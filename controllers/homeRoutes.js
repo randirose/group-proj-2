@@ -80,7 +80,7 @@ router.get('/profile', withAuth, async (req, res)=>{
 });
 
 // get single student
-router.get('/students/:id', withAuth, async (req, res) => {
+router.get('/student/:id', withAuth, async (req, res) => {
     try {
       const studentData = await Student.findByPk(req.params.id, {
         include: [ { model: Equipment },],
@@ -88,8 +88,9 @@ router.get('/students/:id', withAuth, async (req, res) => {
   
       if (studentData) {
         const student = studentData.get({ plain: true });
-  
-        res.render('students', { student, loggedIn: req.session.loggedIn });
+        const staffData = await Staff.findAll();
+        const staffs = staffData.map((staff)=>staff.get({ plain:true }));
+        res.render('student', { student, staffs, loggedIn: req.session.loggedIn });
       } else {
         res.status(404).end();
       }

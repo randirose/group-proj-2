@@ -5,6 +5,7 @@
 <p>{{equipment.asset_name}}</p>
 {{/each}}
 
-<a href="/edit-student/{{student.id}}">Edit Student</a><br>
-<button data-id="{{student.id}}" class="btn btn-primary">Delete Student</button>
+{{!-- <a href="/edit-student/{{student.id}}">Edit Student</a><br> --}}
+{{> edit-student}}
+<button data-id="{{student.id}}" id="deleteBtn" class="btn btn-primary">Delete Student</button>
 <script src="/js/delete-student.js"></script>
