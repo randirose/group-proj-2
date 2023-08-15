@@ -25,7 +25,7 @@ const seedAll = async () => {
     console.log('\n----- EQUIPMENT SEEDED -----\n');
 
     await seedTickets();
-    console.log('\n----- EQUIPMENT SEEDED -----\n');
+    console.log('\n----- TICKETS SEEDED -----\n');
 
     await seedStudentStaff();
     console.log('\n----- STUDENT/STAFF SEEDED -----\n');
