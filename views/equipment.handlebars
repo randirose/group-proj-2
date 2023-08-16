@@ -1,13 +1,13 @@
 {{!-- see details of a piece of equip, maybe show in form so user can update/delete if they want to  - update would include checking 'check out' box to mark asset as checked out --}}
 
 {{!-- equipment details: asset_name, link, price, is_checked_out --}}
-<div class="row">
+<div class="row d-flex justify-content-between">
     <h2>Equipment:</h2>
     <p><i>Green cards are available equipment, and Red cards are currently checked out.</i></p>
 {{#each equipments}}
 {{#if is_checked_out}}
-<div class="col-12 col-sm-3 mb-2">
-<div class="card text mb-3 avail-equip" style="width: 20rem; height: 16rem;">
+<div class="col-12 col-sm-6 col-md-3 d-flex justify-content-between">
+<div class="card text mb-3 checked-out-equip">
   <div class="card-header">${{price}}</div>
   <div class="card-body">
     <h5 class="card-title">{{asset_name}}</h5>
@@ -21,8 +21,8 @@
   </div>
 </div>
 {{else}}
-<div class="col-12 col-sm-3 mb-2">
-<div class="card text mb-3 checked-out-equip" style="width: 20rem; height: 16rem;">
+<div class="col-12 col-sm-6 col-md-3 d-flex justify-content-between">
+<div class="card text mb-3 avail-equip">
   <div class="card-header">${{price}}</div>
   <div class="card-body">
     <h5 class="card-title">{{asset_name}}</h5>

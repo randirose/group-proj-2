@@ -1,4 +1,8 @@
 /* customized styling */
+:root {
+    --red:rgb(237, 141, 141);
+    --green:rgb(174, 218, 174);
+}
 
 .item-link a {
     color: black;
@@ -6,9 +10,9 @@
 }
 
 .avail-equip {
-    background-color: rgb(237, 141, 141);
+    background-color: var(--green);
 }
 
 .checked-out-equip {
-    background-color: rgb(174, 218, 174)
+    background-color: var(--red);
 }
