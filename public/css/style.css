@@ -1,4 +1,15 @@
 /* customized styling */
+:root {
+  --red: rgb(237, 141, 141);
+  --green: rgb(174, 218, 174);
+  --shadow: darkgray;
+  --button: rgb(9, 113, 113);
+}
+
+.nav-item {
+  color: white;
+  font-weight: bold;
+}
 
 .item-link a {
   color: black;
@@ -6,11 +17,71 @@
 }
 
 .avail-equip {
-  background-color: rgb(237, 141, 141);
+  background-color: var(--green);
 }
 
 .checked-out-equip {
-  background-color: rgb(174, 218, 174);
+  background-color: var(--red);
+}
+
+.navbar-brand {
+  font-size: 150%;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px var(--shadow);
+}
+#homepage {
+  width: 100%;
+  margin: auto;
+  text-align: center;
+}
+#homepage-title {
+  font-size: 250%;
+  text-shadow: 2px 2px 2px var(--shadow);
+}
+
+#homepage-desc {
+  width: 75%;
+  margin: auto;
+  font-size: 150%;
+  font-style: italic;
+}
+
+.btn {
+  background-color: var(--button);
+  color: whitesmoke;
+  border: none;
+}
+
+.card-link {
+  color: var(--button);
+  font-weight: bold;
+}
+
+#equip-link {
+  color: var(--button);
+  font-weight: bold;
+  font-size: 125%;
+}
+
+#deleteBtn {
+  background-color: darkgray;
+  margin-top: 2%;
+  width: 100%;
+}
+
+.list-group-item-action {
+  background-color: lightgrey;
+  border-color: var(--button);
+}
+
+#profile-bold {
+  font-weight: bold;
+}
+
+#equip-header {
+  width: 100%;
+  margin: auto;
+  text-align: center;
 }
 
 .btn-danger {
