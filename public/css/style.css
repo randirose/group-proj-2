@@ -3,6 +3,12 @@
     --red:rgb(237, 141, 141);
     --green:rgb(174, 218, 174);
     --shadow: darkgray;
+    --button: rgb(9, 113, 113);
+}
+
+.nav-item {
+    color: white;
+    font-weight: bold;
 }
 
 .item-link a {
@@ -38,4 +44,21 @@
     margin: auto;
     font-size: 150%;
     font-style: italic;
+}
+
+.btn {
+    background-color: var(--button);
+    color: whitesmoke;
+    border: none;
+}
+
+.card-link {
+    color: var(--button);
+    font-weight: bold;
+}
+
+#deleteBtn {
+    background-color: darkgray;
+    margin-top: 2%;
+    width: 100%;
 }
