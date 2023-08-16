@@ -1,43 +1,53 @@
 <div class="row">
-    <div class="col-12 col-md-4 mb-2">
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">Students</h5>
-                <p class="card-text">See students you manage. Click on a student name to see their profile</p>
-            </div>
-            <ul class="list-group list-group-flush">
-             {{#each students as |student|}}
-                <li class="list-group-item"><a href="/student/{{student.id}}" class="list-group-item list-group-item-action">{{student.first_name}} {{student.last_name}}</a></li>
-                  {{!-- want to include a column to show if they have anything checked out --}}
-                {{!-- <li class="list-group-item"> --}}
-                {{!-- {{#if equipment.length}}
+  <div class="col-12 col-md-4 mb-2">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Students</h5>
+        <p class="card-text">See students you manage. Click on a student
+          name to see their profile</p>
+      </div>
+      <ul class="list-group list-group-flush">
+        {{#each students as |student|}}
+          <li class="list-group-item"><a
+              href="/student/{{student.id}}"
+              class="list-group-item list-group-item-action"
+            >{{student.first_name}} {{student.last_name}}</a></li>
+          {{! want to include a column to show if they have anything checked out }}
+          {{! <li class="list-group-item"> }}
+          {{!-- {{#if equipment.length}}
                 checked out
                 {{/if}} --}}
-                {{!-- </li> --}}
-              {{/each}}
-            </ul>
-            <div class="card-footer">
-                <a href="/add-student">Add Student</a>
-            </div>
-        </div>
+          {{! </li> }}
+        {{/each}}
+      </ul>
+      <div class="card-footer">
+        <a href="/add-student">Add Student</a>
+      </div>
     </div>
-    <div class="col-12 col-md-4 mb-2">
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">Equipment</h5>
-                <p class="card-text">See all available equipment. Click on an asset to update it or check it out.</p>
-            </div>
-            <ul class="list-group list-group-flush">
-                {{#each equipments as |equipment|}}
-                <li class="list-group-item"><a href="/equipment/{{equipment.id}}" class="list-group-item list-group-item-action">{{equipment.asset_name}}</a></li>
-                {{/each}}
-            </ul>
-            <div class="card-footer">
-                <a href="/equipment" class="card-link">See all equipment</a>
-            </div>
-        </div>
+  </div>
+  <div class="col-12 col-md-4 mb-2">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Equipment</h5>
+        <p class="card-text">See all available equipment. Click on an asset
+          to update it or check it out.</p>
+      </div>
+      <ul class="list-group list-group-flush">
+        {{#each students as |student|}}
+          {{#each this.equipment as |equip|}}
+            <li class="list-group-item"><a
+                href="/equipment/{{equip.id}}"
+                class="list-group-item list-group-item-action"
+              >{{equip.asset_name}}</a></li>
+          {{/each}}
+        {{/each}}
+      </ul>
+      <div class="card-footer">
+        <a href="/equipment" class="card-link">See all equipment</a>
+      </div>
     </div>
-    {{!-- <div class="col">
+  </div>
+  {{!-- <div class="col">
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">Tickets</h5>
@@ -53,20 +63,20 @@
             </div>
         </div>
     </div> --}}
-    <div class="col-12 col-md-4">
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">Profile</h5>
-                <p class="card-text">View and edit your staff profile</p>
-            </div>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">{{first_name}} {{last_name}}</li>
-                <li class="list-group-item">Role: {{role}}</li>
-                <li class="list-group-item">School: {{school.name}}</li>
-            </ul>
-            <div class="card-footer">
-                <a href="/profile" class="card-link">See more</a>
-            </div>
-        </div>
+  <div class="col-12 col-md-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Profile</h5>
+        <p class="card-text">View and edit your staff profile</p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">{{first_name}} {{last_name}}</li>
+        <li class="list-group-item">Role: {{role}}</li>
+        <li class="list-group-item">School: {{school.name}}</li>
+      </ul>
+      <div class="card-footer">
+        <a href="/profile" class="card-link">See more</a>
+      </div>
     </div>
+  </div>
 </div>
