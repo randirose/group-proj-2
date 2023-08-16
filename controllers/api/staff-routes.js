@@ -64,7 +64,14 @@ router.post('/', async (req, res) => {
 // Update a staff record by id
 router.put('/:id', async (req, res) => {
     try {
-        const staffData = await Staff.update(req.body, {
+        const staffData = await Staff.update({      
+            first_name: req.body.firstName,
+            last_name: req.body.lastName,
+            email: req.body.email,
+            password: req.body.password,
+            role: req.body.role,
+            school_id: req.body.schoolId,
+            is_admin: req.body.isAdmin,}, {
             where: {
                 id: req.params.id,
             },
