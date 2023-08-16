@@ -2,6 +2,7 @@
 :root {
     --red:rgb(237, 141, 141);
     --green:rgb(174, 218, 174);
+    --shadow: darkgray;
 }
 
 .item-link a {
@@ -20,5 +21,21 @@
 .navbar-brand {
     font-size: 150%;
     font-weight: bold;
-    text-shadow: 1px 1px 1px darkgray;
+    text-shadow: 1px 1px 1px var(--shadow);
+}
+#homepage {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+}
+#homepage-title {
+    font-size: 250%;
+    text-shadow: 2px 2px 2px var(--shadow);
+}
+
+#homepage-desc {
+    width: 75%;
+    margin: auto;
+    font-size: 150%;
+    font-style: italic;
 }
