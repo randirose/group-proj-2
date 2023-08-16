@@ -62,7 +62,12 @@ router.post('/', async (req, res) => {
 // Update a student record by id
 router.put('/:id', async (req, res) => {
     try {
-        const studentData = await Student.update(req.body, {
+        const studentData = await Student.update({            
+            first_name: req.body.firstName,
+            last_name: req.body.lastName,
+            grade: req.body.grade,
+            staff_id: req.body.staffId,
+            notes: req.body.notes,}, {
             where: {
                 id: req.params.id,
             },
@@ -70,6 +75,11 @@ router.put('/:id', async (req, res) => {
         if (!studentData) {
             res.status(404).json({ message: 'No student found with that id.' });
         }
+        const studentStaffData = {
+            student_id: studentData.id,
+            staff_id: studentData.staff_id,
+          };
+          StudentStaff.create(studentStaffData);
         res.status(200).json(studentData);
     } catch (err) {
         res.status(500).json(err);
