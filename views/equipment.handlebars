@@ -2,8 +2,11 @@
 
 {{!-- equipment details: asset_name, link, price, is_checked_out --}}
 <div class="row d-flex justify-content-between">
+    <div id="equip-header" class="m-3">
     <h2>Equipment:</h2>
     <p><i>Green cards are available equipment, and Red cards are currently checked out.</i></p>
+    <a href="#add-equip-form" id="equip-link">Add New Equipment</a>
+    </div>
 {{#each equipments}}
 {{#if is_checked_out}}
 <div class="col-12 col-sm-6 col-md-3 d-flex justify-content-between">
@@ -39,6 +42,8 @@
 {{/each}}
 
 </div>
+<div id="add-equip-form">
 {{!-- associated tickets? --}}
 {{!-- add equipment form --}}
 {{> add-equipment}}
+</div>

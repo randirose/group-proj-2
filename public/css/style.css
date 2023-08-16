@@ -57,6 +57,12 @@
     font-weight: bold;
 }
 
+#equip-link {
+    color: var(--button);
+    font-weight: bold;
+    font-size: 125%;
+}
+
 #deleteBtn {
     background-color: darkgray;
     margin-top: 2%;
@@ -70,4 +76,10 @@
 
 #profile-bold {
     font-weight: bold;
+}
+
+#equip-header {
+    width: 100%;
+    margin: auto;
+    text-align: center;
 }
