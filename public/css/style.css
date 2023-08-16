@@ -62,3 +62,12 @@
     margin-top: 2%;
     width: 100%;
 }
+
+.list-group-item-action {
+    background-color: lightgrey;
+    border-color: var(--button)
+}
+
+#profile-bold {
+    font-weight: bold;
+}
