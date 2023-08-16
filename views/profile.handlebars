@@ -4,7 +4,7 @@
   <div class="card-header">
     <h2>Update Profile Below:</h2>
   </div>
-<form class="row g-3 signup-form">
+<form class="row g-3 edit-staff-form" data-id="{{id}}">
   <div class="col-md-6">
     <label for="inputFirstName" class="form-label">First Name</label>
     <input type="text" class="form-control" id="inputFirstName" value="{{first_name}}">
@@ -30,7 +30,7 @@
     <select id="inputSchool" class="form-select">
       <option selected>Choose School</option>
       {{#each schools as |school|}}
-      <option data-id="{{school.id}}">{{school.name}}</option>
+      <option value="{{school.id}}">{{school.name}}</option>
       {{/each}}
     </select>
   </div>
