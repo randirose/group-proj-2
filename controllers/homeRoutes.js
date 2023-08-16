@@ -27,7 +27,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
                 { model: Ticket },],
         });
         const staff = staffData.get({ plain: true });
-        console.log(staff);
+        // console.log(staff);
         res.render('dashboard', {
             ...staff,
             loggedIn: req.session.loggedIn
@@ -89,6 +89,7 @@ router.get('/student/:id', withAuth, async (req, res) => {
             const student = studentData.get({ plain: true });
             const staffData = await Staff.findAll();
             const staffs = staffData.map((staff) => staff.get({ plain: true }));
+            console.log(student);
             res.render('student', { student, staffs, loggedIn: req.session.loggedIn });
         } else {
             res.status(404).end();
