@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { Student, Staff, School, Equipment, Ticket, } = require('../../models');
+const withAuth = require('../../utils/auth');
 
 // The '/api/staff/' endpoint
 
@@ -18,7 +19,7 @@ const { Student, Staff, School, Equipment, Ticket, } = require('../../models');
 
 
 // Get single staff member by id, showing their schools, students, all equipment checked out, and any open issue tickets
-router.get('/:id', async (req, res) => {
+router.get('/:id', withAuth, async (req, res) => {
     try {
         const staffData = await Staff.findByPk(req.params.id, {
             include: [{ model: Student }, { model: School }, { model: Equipment }, { model: Ticket },],
@@ -62,7 +63,7 @@ router.post('/', async (req, res) => {
 
 
 // Update a staff record by id
-router.put('/:id', async (req, res) => {
+router.put('/:id', withAuth, async (req, res) => {
     try {
         const staffData = await Staff.update({      
             first_name: req.body.firstName,

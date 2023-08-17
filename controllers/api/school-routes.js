@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { Student, School, Equipment, Ticket, } = require('../../models');
+const withAuth = require('../../utils/auth');
 
 // The '/api/school/' endpoint
 
@@ -48,7 +49,7 @@ router.post('/', async (req, res) => {
 
 
 // Update a school record by id
-router.put('/:id', async (req, res) => {
+router.put('/:id', withAuth, async (req, res) => {
     try {
         const schoolData = await School.update(req.body, {
             where: {
@@ -66,7 +67,7 @@ router.put('/:id', async (req, res) => {
 
 
 // Delete a school record by id
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', withAuth, async (req, res) => {
     try {
         await School.destroy({
             where: {
