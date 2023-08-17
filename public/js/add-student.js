@@ -11,7 +11,6 @@ const newStudentHandler = async (event) => {
     const staffId = document.querySelector('#inputStaff').value;
     const notes = document.querySelector('#inputNotes').value.trim();
 
-
     if (firstName && lastName && grade && staffId) {
         const response = await fetch('/api/student', {
             method: 'POST',
@@ -20,7 +19,6 @@ const newStudentHandler = async (event) => {
                 'Content-Type': 'application/json'
             }
         });
-
         if (response.ok) {
             document.location.replace('/dashboard');
         } else {
@@ -29,5 +27,4 @@ const newStudentHandler = async (event) => {
     }
 };
 
-addEquipmentForm.addEventListener('submit', newStudentHandler);
-
+addButton.addEventListener('submit', newStudentHandler);

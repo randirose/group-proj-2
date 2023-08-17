@@ -3,8 +3,8 @@
 const addEquipmentForm = document.getElementById('new-equipment-form');
 
 const newEquipmentHandler = async (event) => {
-    event.preventDefault();
     event.stopPropagation();
+    event.preventDefault();
 
     const name = document.getElementById('new-equipment-name').value.trim();
     const price = document.getElementById('new-equipment-price').value.trim();
@@ -19,7 +19,7 @@ const newEquipmentHandler = async (event) => {
             method: 'POST',
             body: JSON.stringify({
                 asset_name: name,
-                serial_num: null,
+                serial_num: '',
                 price: price,
                 link: link,
                 is_checked_out: false,
