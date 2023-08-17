@@ -6,7 +6,7 @@
 <ul class="list-group list-group-flush">
 {{#each student.equipment as |equip|}}
             <li class="list-group-item d-flex justify-content-between align-items-center"><a
-                href="/equipment"
+                href="/equipment-asset/{{equip.id}}" target="_blank"
                 class="list-group-item list-group-item-action me-2"
               >{{equip.id}}: {{equip.asset_name}}</a><button data-id="{{equip.id}}" class="btn btn-danger checkin-btn">Check in</button></li>
 {{/each}}

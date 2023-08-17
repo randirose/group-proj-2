@@ -21,7 +21,7 @@
         {{/each}}
       </ul>
       <div class="card-footer">
-        <a href="/add-student" class="card-link">Add Student</a>
+        <a href="/add-student" class="card-link">Add Student »</a>
       </div>
     </div>
   </div>
@@ -35,14 +35,14 @@
         {{#each students as |student|}}
           {{#each this.equipment as |equip|}}
             <li class="list-group-item"><a
-                href="/equipment"
+                href="/equipment-asset/{{equip.id}}"
                 class="list-group-item list-group-item-action"
               >{{equip.asset_name}}</a></li>
           {{/each}}
         {{/each}}
       </ul>
       <div class="card-footer">
-        <a href="/equipment" class="card-link">See all equipment</a>
+        <a href="/equipment" class="card-link">See all equipment »</a>
       </div>
     </div>
   </div>
@@ -74,7 +74,7 @@
         <li class="list-group-item"><span id="profile-bold">School:</span> {{school.name}}</li>
       </ul>
       <div class="card-footer">
-        <a href="/profile" class="card-link">See all/Edit</a>
+        <a href="/profile" class="card-link">See all / Edit »</a>
       </div>
     </div>
   </div>

@@ -87,3 +87,7 @@
 .btn-danger {
   white-space: nowrap;
 }
+
+.table {
+    border: 5px black;
+}

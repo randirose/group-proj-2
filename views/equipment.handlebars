@@ -13,7 +13,8 @@
 <div class="card text mb-3 checked-out-equip" style="width: 18rem;">
   <div class="card-header">${{price}}</div>
   <div class="card-body">
-    <h5 class="card-title"><a href="{{link}}" target="_blank">{{asset_name}}</a></h5></p>
+    <h5 class="card-title"><a href="/equipment-asset/{{equip.id}}" target="_blank">{{asset_name}}</a></h5>
+    <a href="{{link}}" target="_blank">See on Amazon »</a>
     {{#if tickets.length}}
     <p>Current tickets pending:
     ✔

@@ -1,0 +1,42 @@
+<div>
+    <h3>Equipment Information</h3>
+</div>
+
+<table class="table table-striped table-bordered">
+  {{!-- <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead> --}}
+  <tbody>
+    <tr>
+      <th scope="row">Asset Name</th>
+      <td>{{asset_name}}</td>
+    </tr>
+    <tr>
+      <th scope="row">Price</th>
+      <td>${{price}}</td>
+    </tr>
+    <tr>
+      <th scope="row">Serial Number</th>
+      <td>{{serial_num}}</td>
+    </tr>
+    <tr>
+      <th scope="row">Availablility</th>
+      <td>{{#if is_checked_out}}
+            CHECKED OUT
+            {{else}}
+            AVAILABLE
+            {{/if}}
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">See More Info</th>
+      <td><a href="{{link}}" target="_blank" class="card-link">View on Amazon »</a> &nbsp; | &nbsp;
+      <a href="/equipment" target="_blank" class="card-link">View all Equipment »</a></td>
+    </tr>
+  </tbody>
+</table>
