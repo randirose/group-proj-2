@@ -105,6 +105,25 @@ router.get('/student/:id', withAuth, async (req, res) => {
     }
 });
 
+// get single equipment
+router.get('/equipment-asset/:id', withAuth, async (req, res) => {
+    try {
+        const equipmentData = await Equipment.findByPk(req.params.id, {
+            include: [{ model: Ticket },],
+        });
+
+        if (equipmentData) {
+            const equipment = equipmentData.get({ plain: true });
+
+            res.render('equipment-asset', { ...equipment, loggedIn: req.session.loggedIn });
+        } else {
+            res.status(404).end();
+        }
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
 router.get('/add-student', withAuth, async (req, res) => {
     try {
         const staffData = await Staff.findAll();

@@ -4,7 +4,7 @@
 <div class="row d-flex justify-content-between">
     <div id="equip-header" class="m-3">
     <h2>Equipment:</h2>
-    <p><i>Green cards are available equipment, and Red cards are currently checked out.</i></p>
+    <p><i>Green cards are available equipment, and Red cards are currently checked out.<br>Click on the item name to see it's details, or view on Amazon.</i></p>
     <a href="#add-equip-form" id="equip-link">Add New Equipment</a>
     </div>
 {{#each equipments}}
@@ -13,7 +13,8 @@
 <div class="card text mb-3 checked-out-equip" style="width: 18rem;">
   <div class="card-header">${{price}}</div>
   <div class="card-body">
-    <h5 class="card-title"><a href="{{link}}" target="_blank">{{asset_name}}</a></h5></p>
+    <h5 class="card-title"><a href="/equipment-asset/{{id}}" target="_blank">{{asset_name}}</a></h5>
+    <a href="{{link}}" target="_blank" class="card-link">See on Amazon »</a>
     {{#if tickets.length}}
     <p>Current tickets pending:
     ✔
@@ -27,8 +28,8 @@
 <div class="card text mb-3 avail-equip" style="width: 18rem;">
   <div class="card-header">${{price}}</div>
   <div class="card-body">
-    <h5 class="card-title"><a href="{{link}}" target="_blank">{{asset_name}}</a></h5>
-    
+    <h5 class="card-title"><a href="/equipment-asset/{{id}}" target="_blank">{{asset_name}}</a></h5>
+    <a href="{{link}}" target="_blank" class="card-link">See on Amazon »</a>
     {{#if tickets.length}}
     <p>Current tickets pending:
     ✔
