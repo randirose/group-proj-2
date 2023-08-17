@@ -13,13 +13,12 @@
 <div class="card text mb-3 checked-out-equip">
   <div class="card-header">${{price}}</div>
   <div class="card-body">
-    <h5 class="card-title">{{asset_name}}</h5>
-    <p class="card-text item-link"><a href="{{link}}" target="_blank">{{link}}</a></p>
-    <p>Current tickets pending:
+    <h5 class="card-title"><a href="{{link}}" target="_blank">{{asset_name}}</a></h5></p>
     {{#if tickets.length}}
+    <p>Current tickets pending:
     ✔
-    {{/if}}
     </p>
+    {{/if}}
     </div>
   </div>
 </div>
@@ -28,13 +27,13 @@
 <div class="card text mb-3 avail-equip">
   <div class="card-header">${{price}}</div>
   <div class="card-body">
-    <h5 class="card-title">{{asset_name}}</h5>
-    <p class="card-text item-link"><a href="{{link}}" target="_blank">{{link}}</a></p>
-    <p>Current tickets pending:
+    <h5 class="card-title"><a href="{{link}}" target="_blank">{{asset_name}}</a></h5>
+    
     {{#if tickets.length}}
+    <p>Current tickets pending:
     ✔
-    {{/if}}
     </p>
+    {{/if}}
     </div>
   </div>
 </div>

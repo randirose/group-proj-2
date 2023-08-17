@@ -15,8 +15,6 @@ Ticket.init(
             type: DataTypes.STRING
         },
         date_created: {
-            // sequelize DATE automatically uses the native datatype DATETIME with mysql which has the hour:min:sec
-            // Changed datatype to DATEONLY to avoid any complications with the hour:min:sec values
             type: DataTypes.DATEONLY,
             allowNull: false,
             defaultValue: DataTypes.NOW
