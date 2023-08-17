@@ -89,8 +89,14 @@ router.get('/student/:id', withAuth, async (req, res) => {
             const student = studentData.get({ plain: true });
             const staffData = await Staff.findAll();
             const staffs = staffData.map((staff) => staff.get({ plain: true }));
-            console.log(student);
-            res.render('student', { student, staffs, loggedIn: req.session.loggedIn });
+            const equipmentData = await Equipment.findAll({
+                where: {
+                    is_checked_out: false,
+                }
+            });
+            const equipments = equipmentData.map((equip) => equip.get({ plain: true }));
+            // console.log(student);
+            res.render('student', { student, staffs, equipments, loggedIn: req.session.loggedIn });
         } else {
             res.status(404).end();
         }
