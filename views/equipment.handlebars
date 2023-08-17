@@ -1,0 +1,48 @@
+{{!-- see details of a piece of equip, maybe show in form so user can update/delete if they want to  - update would include checking 'check out' box to mark asset as checked out --}}
+
+{{!-- equipment details: asset_name, link, price, is_checked_out --}}
+<div class="row d-flex justify-content-between">
+    <div id="equip-header" class="m-3">
+    <h2>Equipment:</h2>
+    <p><i>Green cards are available equipment, and Red cards are currently checked out.</i></p>
+    <a href="#add-equip-form" id="equip-link">Add New Equipment</a>
+    </div>
+{{#each equipments}}
+{{#if is_checked_out}}
+<div class="col-12 col-sm-6 col-md-3 d-flex justify-content-between">
+<div class="card text mb-3 checked-out-equip">
+  <div class="card-header">${{price}}</div>
+  <div class="card-body">
+    <h5 class="card-title"><a href="{{link}}" target="_blank">{{asset_name}}</a></h5></p>
+    {{#if tickets.length}}
+    <p>Current tickets pending:
+    ✔
+    </p>
+    {{/if}}
+    </div>
+  </div>
+</div>
+{{else}}
+<div class="col-12 col-sm-6 col-md-3 d-flex justify-content-between">
+<div class="card text mb-3 avail-equip">
+  <div class="card-header">${{price}}</div>
+  <div class="card-body">
+    <h5 class="card-title"><a href="{{link}}" target="_blank">{{asset_name}}</a></h5>
+    
+    {{#if tickets.length}}
+    <p>Current tickets pending:
+    ✔
+    </p>
+    {{/if}}
+    </div>
+  </div>
+</div>
+{{/if}}
+{{/each}}
+
+</div>
+<div id="add-equip-form">
+{{!-- associated tickets? --}}
+{{!-- add equipment form --}}
+{{> add-equipment}}
+</div>

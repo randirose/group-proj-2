@@ -23,10 +23,6 @@ Education Technology Manager
 
 App that manages a library of technology and equipment that is checked out by staff for students across different schools.
 
-<!-- Add more description? -->
-
-<!-- Edit this if we don't get to this feature -->
-
 Users can:
 
 - View all available equipment
@@ -35,16 +31,11 @@ Users can:
 - Add/update a school
 - Update/delete their own staff record
 - Add/update a ticket
-<!-- Add more if missing -->
-
-Admins can do everything a User can and more:
-
 - Add/update/delete equipment
 - Check in equipment from a student
 - Delete a student
 - Delete a school
 - Add/update/delete any staff records
-<!-- Add more if missing -->
 
 <a name="installation"></a>
 
@@ -63,7 +54,7 @@ While in the root directory of the application, enter "npm install" into the ter
 
 ## Usage
 
-<!-- Usage instruction -->
+In the top navagation bar, click
 
 <a name="screenshot"></a>
 
