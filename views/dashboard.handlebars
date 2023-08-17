@@ -4,7 +4,7 @@
       <div class="card-body">
         <h5 class="card-title">Students</h5>
         <p class="card-text">See students you manage. Click on a student
-          name to see their profile</p>
+          name to view, update, or delete their profile. You can also check in or out equipment for that student on their profile.</p>
       </div>
       <ul class="list-group list-group-flush">
         {{#each students as |student|}}
@@ -29,14 +29,13 @@
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">Equipment</h5>
-        <p class="card-text">See all available equipment. Click on an asset
-          to update it or check it out.</p>
+        <p class="card-text">Equipment checked out to your students. Click on one or the link at the bottom to view all and/or add equipment.</p>
       </div>
       <ul class="list-group list-group-flush">
         {{#each students as |student|}}
           {{#each this.equipment as |equip|}}
             <li class="list-group-item"><a
-                href="/equipment/{{equip.id}}"
+                href="/equipment"
                 class="list-group-item list-group-item-action"
               >{{equip.asset_name}}</a></li>
           {{/each}}
@@ -67,7 +66,7 @@
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">Profile</h5>
-        <p class="card-text">View and edit your staff profile</p>
+        <p class="card-text">View and update your staff profile.</p>
       </div>
       <ul class="list-group list-group-flush">
         <li class="list-group-item"><span id="profile-bold">{{first_name}} {{last_name}}</span></li>
