@@ -2,19 +2,41 @@
   <div class="card-header">
     <h2>Add New Equipment</h2>
   </div>
-<div class="row g-3 add-equipment-form p-3">
-  <div class="col-sm-4">
-    <input type="text" class="form-control" placeholder="Equipment Name" aria-label="equipment name">
-  </div>
-  <div class="col-sm-2">
-    <input type="number" class="form-control" placeholder="Price" aria-label="Price">
-  </div>
-  <div class="col-sm-4">
-    <input type="text" class="form-control" placeholder="Link" aria-label="Link">
-  </div>
-<div class="col-sm-2">
-    <button type="submit" id="add-equipment" class="btn btn-primary">Add Equipment</button>
-  </div>
-</div>
+  <form class="row g-3 p-3" id="new-equipment-form">
+    <div class="col-sm-4">
+      <input
+        type="text"
+        class="form-control"
+        id="new-equipment-name"
+        placeholder="Equipment Name"
+        aria-label="equipment name"
+      />
+    </div>
+    <div class="col-sm-2">
+      <input
+        type="number"
+        class="form-control"
+        id="new-equipment-price"
+        placeholder="Price"
+        aria-label="Price"
+      />
+    </div>
+    <div class="col-sm-4">
+      <input
+        type="url"
+        class="form-control"
+        id="new-equipment-link"
+        placeholder="Link"
+        aria-label="Link"
+      />
+    </div>
+    <div class="col-sm-2">
+      <button
+        type="submit"
+        id="add-new-equipment"
+        class="btn btn-primary"
+      >Add New Equipment</button>
+    </div>
+  </form>
 </div>
 <script src="/js/add-equipment.js"></script>

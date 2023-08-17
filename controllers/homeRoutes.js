@@ -44,7 +44,7 @@ router.get('/equipment', withAuth, async (req, res) => {
             include: [{ model: Student }, { model: Ticket },],
         });
         const equipments = equipData.map((equipment) => equipment.get({ plain: true }));
-        console.log(equipments);
+        // console.log(equipments);
         res.render('equipment', {
             equipments,
             loggedIn: req.session.loggedIn

@@ -37,6 +37,8 @@ router.get('/:id', withAuth, async (req, res) => {
 router.post('/', withAuth, async (req, res) => {
     try {
         const equipmentData = await Equipment.create(req.body);
+        console.log('equipmentData:', equipmentData);
+
         if (!equipmentData) {
             res.status(404).json({ message: 'Error creating new equipment record.' });
         }

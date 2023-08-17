@@ -2,7 +2,7 @@
 
 const addButton = document.querySelector('#new-student-form');
 
-const newStudentHandler = async(event)=>{
+const newStudentHandler = async (event) => {
     event.preventDefault();
 
     const firstName = document.querySelector('#inputFirstName').value.trim();
@@ -10,7 +10,7 @@ const newStudentHandler = async(event)=>{
     const grade = document.querySelector('#inputGrade').value.trim();
     const staffId = document.querySelector('#inputStaff').value;
     const notes = document.querySelector('#inputNotes').value.trim();
-    
+
 
     if (firstName && lastName && grade && staffId) {
         const response = await fetch('/api/student', {
@@ -29,5 +29,5 @@ const newStudentHandler = async(event)=>{
     }
 };
 
-addButton.addEventListener('submit', newStudentHandler);
+addEquipmentForm.addEventListener('submit', newStudentHandler);
 
