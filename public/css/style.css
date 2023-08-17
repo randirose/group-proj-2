@@ -73,7 +73,8 @@
   font-size: 125%;
 }
 
-#deleteBtn {
+#deleteBtn,
+#del-equip {
   background-color: darkgray;
   margin-top: 2%;
   width: 100%;
