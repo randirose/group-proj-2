@@ -1,10 +1,11 @@
 const router = require('express').Router();
 const { Student, Equipment, Ticket, } = require('../../models');
+const withAuth = require('../../utils/auth');
 
 // The '/api/equipment/' endpoint
 
 // Get all equipment, showing the student id if checked out and any open issue tickets
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
     try {
         const equipmentData = await Equipment.findAll({
             include: [{ model: Student }, { model: Ticket },],
@@ -17,7 +18,7 @@ router.get('/', async (req, res) => {
 
 
 // Get single piece of equipment by id, showing the student id if checked out and any open issue tickets 
-router.get('/:id', async (req, res) => {
+router.get('/:id', withAuth, async (req, res) => {
     try {
         const equipmentData = await Equipment.findByPk(req.params.id, {
             include: [{ model: Student }, { model: Ticket },],
@@ -33,7 +34,7 @@ router.get('/:id', async (req, res) => {
 
 
 // Create new equipment record, ensure req.body aligns with the Equipment model
-router.post('/', async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
     try {
         const equipmentData = await Equipment.create(req.body);
         if (!equipmentData) {
@@ -47,7 +48,7 @@ router.post('/', async (req, res) => {
 
 
 // Update equipment records by id,
-router.put('/:id', async (req, res) => {
+router.put('/:id', withAuth, async (req, res) => {
     try {
         const equipmentData = await Equipment.update(req.body, {
             where: {
@@ -66,7 +67,7 @@ router.put('/:id', async (req, res) => {
 });
 
 // Delete a equipment record by id
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', withAuth, async (req, res) => {
     try {
         await Equipment.destroy({
             where: {

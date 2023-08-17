@@ -12,7 +12,6 @@ const updateStudentHandler = async(event)=>{
     const notes = document.querySelector('#inputNotes').value.trim();
     const id = document.querySelector('input[name="student-id"]').value;
 
-    // if (firstName && lastName && grade && staffId) {
         const response = await fetch(`/api/student/${id}`, {
             method: 'PUT',
             body: JSON.stringify({ firstName, lastName, grade, staffId, notes }),

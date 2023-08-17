@@ -1,3 +1,5 @@
+// FE to signup new staff member
+
 const signupFormHandler = async function(event) {
     event.preventDefault();
     

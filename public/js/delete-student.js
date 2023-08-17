@@ -15,7 +15,7 @@ const delStudentHandler = async (event) => {
     if (response.ok) {
         document.location.replace('/dashboard');
     } else {
-        alert('Sorry, failed to delete blog post');
+        alert('Sorry, failed to delete student');
     }
 };
 delButton.addEventListener('click', delStudentHandler);

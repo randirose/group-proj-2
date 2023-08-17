@@ -46,7 +46,7 @@ router.get('/student/:id', withAuth, async (req, res) => {
 
 
 // Create new student record, ensure req.body aligns with the Student model
-router.post('/', async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
     try {
         const studentData = await Student.create({
             first_name: req.body.firstName,
@@ -73,7 +73,7 @@ router.post('/', async (req, res) => {
 
 
 // Update a student record by id
-router.put('/:id', async (req, res) => {
+router.put('/:id', withAuth, async (req, res) => {
     try {
         const studentData = await Student.update({
             first_name: req.body.firstName,
@@ -104,7 +104,7 @@ router.put('/:id', async (req, res) => {
 });
 
 // Check out new equipment to student
-router.put('/checkout/:id', async (req, res) => {
+router.put('/checkout/:id', withAuth, async (req, res) => {
     try {
         const studentEquipmentData = {
             student_id: req.body.student_id,
@@ -119,7 +119,7 @@ router.put('/checkout/:id', async (req, res) => {
 
 
 // Check in equipment from student
-router.delete('/checkin/:id', async (req, res) => {
+router.delete('/checkin/:id', withAuth, async (req, res) => {
     try {
         await StudentEquipment.destroy({
             where: {
@@ -134,7 +134,7 @@ router.delete('/checkin/:id', async (req, res) => {
 });
 
 // Delete a student record by id
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', withAuth, async (req, res) => {
     try {
         await Student.destroy({
             where: {
