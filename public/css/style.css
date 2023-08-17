@@ -11,7 +11,7 @@
   font-weight: bold;
 }
 
-.card-title a {
+.item-link a {
   color: black;
   font-weight: 400;
 }
@@ -82,4 +82,8 @@
   width: 100%;
   margin: auto;
   text-align: center;
+}
+
+.btn-danger {
+  white-space: nowrap;
 }

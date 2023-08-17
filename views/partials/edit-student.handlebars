@@ -1,0 +1,37 @@
+<div class="post card p-3">
+  <div class="card-header">
+    <h2>Update Student Information for {{student.first_name}} {{student.last_name}}</h2>
+  </div>
+ <form class="row g-3" id="edit-student-form">
+      <input type="hidden" name="student-id" value="{{student.id}}" />
+  <div class="col-md-6">
+    <label for="inputFirstName" class="form-label">First Name</label>
+    <input type="text" class="form-control" id="inputFirstName" name="firstName" value="{{student.first_name}}">
+  </div>
+  <div class="col-md-6">
+    <label for="inputLastName" class="form-label">Last Name</label>
+    <input type="text" class="form-control" id="inputLastName" value="{{student.last_name}}">
+  </div>
+  <div class="col-md-3">
+    <label for="inputEmail" class="form-label">Grade</label>
+    <input type="number" class="form-control" id="inputGrade" value="{{student.grade}}">
+  </div>
+  <div class="col-md-9">
+    <label for="inputStaff" class="form-label">Managing Staff Member</label>
+    <select id="inputStaff" class="form-select">
+      <option selected>Choose Staff</option>
+      {{#each staffs as |staff|}}
+      <option value="{{staff.id}}">{{staff.first_name}} {{staff.last_name}}</option>
+      {{/each}}
+    </select>
+  </div>
+  <div class="col-md-12">
+    <label for="inputNotes" class="form-label">Notes</label>
+    <textarea type="text" class="form-control" id="inputNotes" rows="3">{{student.notes}}</textarea>
+  </div>
+  <div class="col-12">
+    <button type="submit" class="btn btn-primary">Update Student</button>
+  </div>
+</form>
+</div>
+<script src="/js/edit-student.js"></script>
