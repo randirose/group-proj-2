@@ -10,7 +10,7 @@
 {{#each equipments}}
 {{#if is_checked_out}}
 <div class="col-12 col-sm-6 col-md-3 d-flex justify-content-between">
-<div class="card text mb-3 checked-out-equip">
+<div class="card text mb-3 checked-out-equip" style="width: 18rem;">
   <div class="card-header">${{price}}</div>
   <div class="card-body">
     <h5 class="card-title"><a href="{{link}}" target="_blank">{{asset_name}}</a></h5></p>
@@ -24,7 +24,7 @@
 </div>
 {{else}}
 <div class="col-12 col-sm-6 col-md-3 d-flex justify-content-between">
-<div class="card text mb-3 avail-equip">
+<div class="card text mb-3 avail-equip" style="width: 18rem;">
   <div class="card-header">${{price}}</div>
   <div class="card-body">
     <h5 class="card-title"><a href="{{link}}" target="_blank">{{asset_name}}</a></h5>
