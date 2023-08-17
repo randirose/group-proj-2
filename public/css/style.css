@@ -17,11 +17,21 @@
 }
 
 .avail-equip {
+    background-color: rgb(229, 242, 229);
+}
+
+.avail-equip > .card-header {
   background-color: var(--green);
+  font-weight: bold;
 }
 
 .checked-out-equip {
+    background-color: rgb(235, 203, 203);;
+}
+
+.checked-out-equip > .card-header {
   background-color: var(--red);
+  font-weight: bold;
 }
 
 .navbar-brand {
@@ -86,4 +96,8 @@
 
 .btn-danger {
   white-space: nowrap;
+}
+
+.table {
+    border: 5px black;
 }
