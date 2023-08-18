@@ -8,7 +8,7 @@ const updateStaffHandler = async function(event) {
     const firstName = document.querySelector('#inputFirstName').value.trim();
     const lastName = document.querySelector('#inputLastName').value.trim();
     const email = document.querySelector('#inputEmail').value.trim();
-    const password = document.querySelector('#inputPassword').value.trim();
+    // const password = document.querySelector('#inputPassword').value.trim();
     const role = document.querySelector('#inputRole').value.trim();
     const schoolId = document.querySelector('#inputSchool').value;
     const isAdmin = document.querySelector('#gridCheck').checked;
@@ -21,7 +21,7 @@ const updateStaffHandler = async function(event) {
         firstName,
         lastName,
         email,
-        password,
+        // password,
         role,
         schoolId,
         isAdmin,
