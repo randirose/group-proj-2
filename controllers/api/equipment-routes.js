@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Student, Equipment, Ticket, } = require('../../models');
+const { Student, Equipment, Ticket } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 // The '/api/equipment/' endpoint
@@ -36,7 +36,15 @@ router.get('/:id', withAuth, async (req, res) => {
 // Create new equipment record, ensure req.body aligns with the Equipment model
 router.post('/', withAuth, async (req, res) => {
     try {
-        const equipmentData = await Equipment.create(req.body);
+        const equipmentData = await Equipment.create({
+            asset_name: req.body.asset_name,
+            serial_num: req.body.serial_num,
+            price: req.body.price,
+            link: req.body.link,
+            is_checked_out: req.body.is_checked_out,
+        });
+        console.log('equipmentData:', equipmentData);
+
         if (!equipmentData) {
             res.status(404).json({ message: 'Error creating new equipment record.' });
         }

@@ -12,15 +12,13 @@ Equipment.init(
             autoIncrement: true
         },
         asset_name: {
-            type: DataTypes.STRING
+            type: DataTypes.STRING,
+            allowNull: false,
         },
         serial_num: {
             type: DataTypes.STRING,
-            // Changed to allow a null value if equipment doesn't have a serial number
-            // allowNull: false,
         },
         price: {
-            // Added optional parameters to limit to 10 numbers long and always show 2 decimal places
             type: DataTypes.DECIMAL(10, 2),
             allowNull: false,
         },
@@ -33,14 +31,13 @@ Equipment.init(
             allowNull: false,
             defaultValue: false
         },
-        ticket_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                //'id' from Ticket model
-                model: 'ticket',
-                key: 'id'
-            }
-        },
+        // ticket_id: {
+        //     type: DataTypes.ARRAY(DataTypes.INTEGER),
+        //     references: {
+        //         model: 'equipmentTicket',
+        //         key: 'ticket_id'
+        //     }
+        // },
     }, {
     sequelize,
     timestamps: false,

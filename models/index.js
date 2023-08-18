@@ -26,30 +26,30 @@ Staff.belongsToMany(Student, {
 });
 
 Equipment.belongsToMany(Ticket, {
-    through: 'EquipmentTicket',
+    through: 'equipmentTicket',
     foreignKey: 'equipment_id',
     // when we delete a piece of equipment, deletes any associated tickets
     onDelete: 'CASCADE'
 });
 
 Equipment.belongsToMany(Student, {
-    through: StudentEquipment,
+    through: 'studentEquipment',
     foreignKey: 'equipment_id'
 });
 
 Student.belongsToMany(Equipment, {
-    through: StudentEquipment,
+    through: 'studentEquipment',
     foreignKey: 'student_id'
 });
 
 Staff.belongsToMany(Ticket, {
-    through: 'StaffTicket',
+    through: 'staffTicket',
     foreignKey: 'staff_id'
 });
 
 Ticket.belongsTo(Staff, {
-    through: 'StaffTicket',
+    through: 'staffTicket',
     foreignKey: 'staff_id'
 });
 
-module.exports = { Ticket, Student, StudentEquipment, StudentStaff, Staff, Equipment, School}
+module.exports = { Ticket, Student, StudentEquipment, StudentStaff, Staff, Equipment, School };
