@@ -67,9 +67,12 @@ While in the root directory of the application, enter "npm install" into the ter
 
 <a name="screenshot"></a>
 
-## Screenshot
+## Screenshots
 
-<!-- [Screenshot](Screenshot link) -->
+![Dashboard](assets/dashboard.png)
+![Student Page](assets/student-page.png)
+![Equipment Page](assets/equipment.png)
+![All Equipment](assets/all-equip.png)
 
 <a name="license"></a>
 
