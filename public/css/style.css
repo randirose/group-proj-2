@@ -102,3 +102,8 @@
 .table {
     border: 5px black;
 }
+
+#checkoutBtn {
+    margin-bottom: 25px;
+    width: 100%;
+}

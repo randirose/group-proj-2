@@ -27,15 +27,12 @@ Users can:
 
 - View all available equipment
 - Check out available equipment to a student
-- Add/update a student
-- Add/update a school
-- Update/delete their own staff record
-- Add/update a ticket
-- Add/update/delete equipment
 - Check in equipment from a student
-- Delete a student
-- Delete a school
-- Add/update/delete any staff records
+- Add/update/delete a student
+- Update their own staff record
+- Add/delete equipment
+- Add/update/delete a school (future development)
+- Add/update a ticket (future development)
 
 <a name="installation"></a>
 
@@ -54,7 +51,19 @@ While in the root directory of the application, enter "npm install" into the ter
 
 ## Usage
 
-In the top navagation bar, click
+- In the top navagation bar, click 'Sign Up' and create your profile.  
+  
+- Once logged in, you can view your 'Staff Dashboard' where you can see the students you manage, add students (and update and delete), view all equipment checked out to those students, and view your basic profile information.  
+  
+- Click on a student's name to view their profile. Here, you can check in equipment that they are done using, check out new, available equipment, and update their profile, or delete it altogether.  
+  
+- From your dashboard, click on a piece of equipment to see its details, and / or delete it from the database.  
+  
+- From here, or from your dash, you can click on 'view all equipment' and you'll see a page full of color-coded (checked out or available) cards containing the equipment name, link to it's details page, price, and link to its Amazon page. You can also 'add equipment' using the form at the bottom of the page.  
+  
+- Back at your dashboard, you can view your full profile by clicking on the link at the bottom of your profile card. Here, you can update your information!  
+  
+- Once you've created an account, you can login at anytime! You will be automatically signed out after 24 hours.
 
 <a name="screenshot"></a>
 
